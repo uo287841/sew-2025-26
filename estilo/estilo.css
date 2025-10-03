@@ -1,4 +1,38 @@
 /* Luis Salvador Ferrero Carneiro y UO287841*/
 
+/* ============================================================
+   Paleta de colores utilizada en MotoGP-Desktop
+   ------------------------------------------------------------
+   Serenity:  #54627b → Color principal para fondo general y secciones
+   Champagne: #ecd5bb → Color de texto principal y detalles decorativos
+   White:     #ffffff → Fondo de elementos destacados o texto sobre colores oscuros
+   Crimson:   #710117 → Color de acento para enlaces, botones y elementos interactivos
+   ============================================================ */
 
-/* Estilos generales del proyecto MotoGP-Desktop*/
+
+/* Selector: body (especificidad 1 elemento) */
+/* Se aplica el color de fondo general (Serenity) y el color de texto principal (Champagne) mediante herencia */
+body {
+    background-color: #ecd5bb; 
+    color: #710117; 
+  }
+  
+  /* Selector: header (especificidad 1 elemento) */
+  /* Se aplica el color de fondo del encabezado principal (White para contraste y limpieza visual) */
+  header {
+    background-color: #ffffff; 
+  }
+  
+  /* Selector: h1 (especificidad 1 elemento) */
+  /* Se aplica el color de texto del título principal (Crimson) para destacar visualmente */
+  h1 {
+    color: #ecd5bb; 
+  }
+  
+  /* Selector: nav (especificidad 1 elemento) */
+  /* Se aplica el color de texto de los enlaces de navegación (Crimson), heredado por los <a> si no se sobrescribe */
+  nav {
+    color: #ecd5bb; 
+  }
+  
+
