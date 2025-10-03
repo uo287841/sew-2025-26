@@ -1,38 +1,73 @@
-/* Luis Salvador Ferrero Carneiro y UO287841*/
+/* Luis Salvador Ferrero Carneiro y UO287841 */
 
 /* ============================================================
    Paleta de colores utilizada en MotoGP-Desktop
    ------------------------------------------------------------
-   Serenity:  #54627b → Color principal para fondo general y secciones
-   Champagne: #ecd5bb → Color de texto principal y detalles decorativos
-   White:     #ffffff → Fondo de elementos destacados o texto sobre colores oscuros
-   Crimson:   #710117 → Color de acento para enlaces, botones y elementos interactivos
+   Serenity:  #54627b 
+   Champagne: #ecd5bb 
+   White:     #ffffff
+   Crimson:   #710117
    ============================================================ */
 
-
 /* Selector: body (especificidad 1 elemento) */
-/* Se aplica el color de fondo general (Serenity) y el color de texto principal (Champagne) mediante herencia */
+/* Se aplica el color de fondo general (White) y el color de texto principal (Serenity) mediante herencia */
 body {
-    background-color: #ecd5bb; 
-    color: #710117; 
-  }
-  
-  /* Selector: header (especificidad 1 elemento) */
-  /* Se aplica el color de fondo del encabezado principal (White para contraste y limpieza visual) */
-  header {
-    background-color: #ffffff; 
-  }
-  
-  /* Selector: h1 (especificidad 1 elemento) */
-  /* Se aplica el color de texto del título principal (Crimson) para destacar visualmente */
-  h1 {
-    color: #ecd5bb; 
-  }
-  
-  /* Selector: nav (especificidad 1 elemento) */
-  /* Se aplica el color de texto de los enlaces de navegación (Crimson), heredado por los <a> si no se sobrescribe */
-  nav {
-    color: #ecd5bb; 
-  }
-  
+  background-color: #ffffff; /* White */
+  color: #54627b; /* Serenity */
+}
 
+/* Selector: header (especificidad 1 elemento) */
+/* Se aplica el color de fondo del encabezado principal (Champagne) para contraste y limpieza visual */
+header {
+  background-color: #ecd5bb; /* Champagne */
+}
+/* Selector: header > p (especificidad 2 elementos: header + p) */
+/* Se aplica estilo exclusivo al párrafo de migas de navegación */
+header > p {
+  font-size: 0.875em; /* Tamaño relativo más pequeño */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+/* Selector: header a (especificidad 2 elementos: header + a) */
+/* Se aplica estilo a los enlaces del encabezado */
+header a {
+  color: #710117; /* Crimson */
+  text-decoration-line: none; /* Elimina el subrayado */
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+/* Selector: header a:hover (especificidad 3 elementos: header + a + pseudo-clase) */
+/* Se aplica estilo al pasar el ratón por encima del enlace */
+header a:hover {
+  color: #54627b; /* Serenity */
+  text-decoration-line: underline;
+}
+/* Selector: header a:focus (especificidad 3 elementos: header + a + pseudo-clase) */
+/* Se aplica estilo cuando el enlace recibe foco (accesibilidad teclado) */
+header a:focus {
+  outline: 2px dashed #ecd5bb; /* Champagne */
+  outline-offset: 4px;
+}
+
+
+
+
+/* Selector: h1 (especificidad 1 elemento) */
+/* Se aplica el color de texto del título principal (Crimson) para destacar visualmente */
+h1 {
+  color: #710117; /* Crimson */
+}
+
+/* Selector: nav (especificidad 1 elemento) */
+/* Se aplica el color de texto de los enlaces de navegación (Crimson), heredado por los <a> si no se sobrescribe */
+nav {
+  color: #710117; /* Crimson */
+}
+
+/* Selector: .active (especificidad 1 clase) */
+/* Se aplica estilo especial al enlace del menú que representa el documento actual */
+.active {
+  color: #710117; /* Crimson: color de acento */
+  font-weight: bold;
+  text-decoration: underline;
+}

@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="estilo/estilo.css" />
+    <link rel="stylesheet" href="estilo/layout.css" />
     <title>MotoGP-Brad Binder</title>
 
     <link
@@ -29,7 +30,7 @@
 
       <nav>
         <a href="index.html" title="Index">Home</a>
-        <a href="piloto.html" title="Piloto">Piloto</a>
+        <a href="piloto.html" class="active" title="Piloto">Piloto</a>
         <a href="circuito.html" title="Circuito">Circuito</a>
         <a href="metereologia.html" title="Metereología">Metereologia</a>
         <a href="clasificacion.html" title="Clasificacion">Clasificacion</a>
@@ -37,7 +38,10 @@
         <a href="ayuda.html" title="Ayuda">Ayuda</a>
       </nav>
 
-      <p>Estás en: <a href="index.html">Inicio</a> &gt; &gt; Piloto</p>
+      <p>
+        Estás en: <a href="index.html">Inicio</a> &gt; &gt;
+        <strong>Piloto</strong>
+      </p>
     </header>
 
     <main>
@@ -55,15 +59,15 @@
 
         <picture>
           <source
-            src="multimedia/img/piloto/piloto_300px.jpg"
+            srcset="multimedia/img/piloto/piloto_300px.jpg"
             media="(max-width: 465px)"
           />
           <source
-            src="multimedia/img/piloto/piloto_500px.jpg"
+            srcset="multimedia/img/piloto/piloto_500px.jpg"
             media="(max-width: 799px)"
           />
           <source
-            src="multimedia/img/piloto/piloto.jpg"
+            srcset="multimedia/img/piloto/piloto.jpg"
             media="(min-width:800px)"
           />
           <img
@@ -86,6 +90,7 @@
       </aside>
 
       <section>
+        <h3>Video del piloto</h3>
         <!-- Atributo controls: añade los botones de reproducir, pausar, volumen, etc-->
         <video controls>
           <source src="multimedia/video/piloto/piloto.webm" type="video/webm" />
