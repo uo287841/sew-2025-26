@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<circuito id="circuito-misano-2025" version="1.0">
+
+  <nombre>Misano World Circuit Marco Simoncelli</nombre>
+
+  <medidas>
+    <longitud unidades="m">4226</longitud>
+    <anchuraMedia unidades="m">14</anchuraMedia>
+  </medidas>
+
+  <evento>
+    <fecha>2025-09-14</fecha>
+    <horaInicio>14:00</horaInicio>
+    <numeroVueltas>27</numeroVueltas>
+  </evento>
+
+  <ubicacion>
+    <localidadProxima>Misano Adriatico</localidadProxima>
+    <pais>Italia</pais>
+  </ubicacion>
+
+  <patrocinio>
+    <patrocinadorPrincipal>Red Bull</patrocinadorPrincipal>
+  </patrocinio>
+
+  <referencias>
+    <referencia>Official MotoGP — Results &amp; standings (motogp.com)</referencia>
+    <referencia>Wikipedia — San Marino and Rimini Riviera Grand Prix (2025)</referencia>
+    <referencia>Crash.net — Misano 2025 race report and standings</referencia>
+    <referencia>Motorsport.com — Race report: San Marino GP 2025</referencia>
+  </referencias>
+
+  <galeriaFotos>
+    <foto archivo="../multimedia/img/circuito/panoramica.jpg" descripcion="Vista panorámica del circuito"/>
+  </galeriaFotos>
+
+  <galeriaVideos>
+    <video archivo="../multimedia/video/circuito/paronamica.webm" descripcion="Vista aerea del circuitp" duracion="00:00:08"/>
+  </galeriaVideos>
+
+  <geografia>
+    <origen>
+      <longitud unidades="deg">12.683300</longitud>
+      <latitud unidades="deg">43.956800</latitud>
+      <altitud unidades="m">27</altitud>
+    </origen>
+  </geografia>
+
+  <tramos>
+    <!-- SECTOR 1 -->
+    <tramo>
+      <distancia unidades="m">230</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.684500</longitud>
+        <latitud unidades="deg">43.957100</latitud>
+        <altitud unidades="m">27</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">190</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.685200</longitud>
+        <latitud unidades="deg">43.957500</latitud>
+        <altitud unidades="m">28</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">260</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.686100</longitud>
+        <latitud unidades="deg">43.957900</latitud>
+        <altitud unidades="m">28</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">320</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.687300</longitud>
+        <latitud unidades="deg">43.958300</latitud>
+        <altitud unidades="m">29</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">280</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.688200</longitud>
+        <latitud unidades="deg">43.958000</latitud>
+        <altitud unidades="m">29</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">300</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.689100</longitud>
+        <latitud unidades="deg">43.957600</latitud>
+        <altitud unidades="m">30</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+
+    <!-- SECTOR 2 -->
+    <tramo>
+      <distancia unidades="m">250</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.689800</longitud>
+        <latitud unidades="deg">43.957100</latitud>
+        <altitud unidades="m">30</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">310</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.689900</longitud>
+        <latitud unidades="deg">43.956500</latitud>
+        <altitud unidades="m">31</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">280</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.689000</longitud>
+        <latitud unidades="deg">43.955900</latitud>
+        <altitud unidades="m">31</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">270</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.687800</longitud>
+        <latitud unidades="deg">43.955400</latitud>
+        <altitud unidades="m">32</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">300</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.686500</longitud>
+        <latitud unidades="deg">43.955300</latitud>
+        <altitud unidades="m">32</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+
+    <!-- SECTOR 3 -->
+    <tramo>
+      <distancia unidades="m">270</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.685300</longitud>
+        <latitud unidades="deg">43.955600</latitud>
+        <altitud unidades="m">31</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">250</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.684300</longitud>
+        <latitud unidades="deg">43.956100</latitud>
+        <altitud unidades="m">30</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">290</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.683700</longitud>
+        <latitud unidades="deg">43.956500</latitud>
+        <altitud unidades="m">29</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">210</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.683500</longitud>
+        <latitud unidades="deg">43.956700</latitud>
+        <altitud unidades="m">28</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">296</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.683300</longitud>
+        <latitud unidades="deg">43.956800</latitud>
+        <altitud unidades="m">27</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+  </tramos>
+
+  <resultado>
+    <vencedor>Marc Márquez</vencedor>
+    <tiempoTotal>00:41:20.898</tiempoTotal>
+  </resultado>
+
+  <clasificacionMundial>
+    <piloto posicion="1">
+      <nombrePiloto>Marc Márquez</nombrePiloto>
+      <equipo>Ducati Lenovo Team</equipo>
+      <puntos>512</puntos>
+    </piloto>
+    <piloto posicion="2">
+      <nombrePiloto>Álex Márquez</nombrePiloto>
+      <equipo>BK8 Gresini Racing</equipo>
+      <puntos>330</puntos>
+    </piloto>
+    <piloto posicion="3">
+      <nombrePiloto>Marco Bezzecchi</nombrePiloto>
+      <equipo>Aprilia Racing</equipo>
+      <puntos>282</puntos>
+    </piloto>
+  </clasificacionMundial>
+
+</circuito>

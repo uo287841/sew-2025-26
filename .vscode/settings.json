@@ -1,0 +1,13 @@
+{
+  // Activa el formateo al guardar
+  "editor.formatOnSave": true,
+
+  // Establece el formateador predeterminado para XML
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+
+  // Opcional: define la indentación (por ejemplo, 2 espacios)
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true
+}

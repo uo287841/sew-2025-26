@@ -1,0 +1,77 @@
+<!-- DTD para describir la gramática de circuito.xml -->
+<!ELEMENT circuito (nombre, medidas, evento, ubicacion, patrocinio, referencias, galeriaFotos, galeriaVideos, geografia, tramos, resultado, clasificacionMundial)>
+<!ATTLIST circuito
+  id ID #REQUIRED
+  version CDATA #IMPLIED
+>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT medidas (longitud, anchuraMedia)>
+
+<!ELEMENT longitud (#PCDATA)>
+<!ATTLIST longitud unidades (m|deg) #REQUIRED>
+
+<!ELEMENT latitud (#PCDATA)>
+<!ATTLIST latitud unidades (deg) #REQUIRED>
+
+<!ELEMENT altitud (#PCDATA)>
+<!ATTLIST altitud unidades (m) #REQUIRED>
+
+<!ELEMENT anchuraMedia (#PCDATA)>
+<!ATTLIST anchuraMedia unidades CDATA #REQUIRED  >
+
+<!ELEMENT evento (fecha, horaInicio, numeroVueltas)>
+<!ELEMENT fecha (#PCDATA)>          <!-- formato recomendado: YYYY-MM-DD -->
+<!ELEMENT horaInicio (#PCDATA)>     <!-- hora local de España; formato recomendado: HH:MM -->
+<!ELEMENT numeroVueltas (#PCDATA)>
+
+<!ELEMENT ubicacion (localidadProxima, pais)>
+<!ELEMENT localidadProxima (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+
+<!ELEMENT patrocinio (patrocinadorPrincipal)>
+<!ELEMENT patrocinadorPrincipal (#PCDATA)>
+
+<!ELEMENT referencias (referencia+)>
+<!ELEMENT referencia (#PCDATA)>
+
+<!ELEMENT galeriaFotos (foto+)>
+<!ELEMENT foto EMPTY>
+<!ATTLIST foto
+  archivo CDATA #REQUIRED          
+  descripcion CDATA #IMPLIED
+><!-- nombre del archivo local, e.g., "Panorama.jpg" -->
+
+<!ELEMENT galeriaVideos (video+)>
+<!ELEMENT video EMPTY>
+<!ATTLIST video
+  archivo CDATA #REQUIRED          
+  descripcion CDATA #IMPLIED
+  duracion CDATA #IMPLIED          
+><!-- opcional, e.g., "00:01:23" --> <!-- nombre del archivo local, e.g., "Onboard.mp4" -->
+
+<!ELEMENT geografia (origen)>
+<!ELEMENT origen (longitud, latitud, altitud)>
+
+<!ELEMENT tramos (tramo+)>
+<!ELEMENT tramo (distancia, puntoFinal, sector)>
+<!ELEMENT distancia (#PCDATA)>
+<!ATTLIST distancia
+  unidades CDATA #REQUIRED        
+> <!-- e.g., "m" -->
+<!ELEMENT puntoFinal (longitud, latitud, altitud)>
+<!ELEMENT sector (#PCDATA)>
+
+<!ELEMENT resultado (vencedor, tiempoTotal)>
+<!ELEMENT vencedor (#PCDATA)>
+<!ELEMENT tiempoTotal (#PCDATA)>   <!-- formato recomendado: HH:MM:SS.xxx -->
+
+<!ELEMENT clasificacionMundial (piloto+)>
+<!ELEMENT piloto (nombrePiloto, equipo?, puntos)>
+<!ATTLIST piloto
+  posicion CDATA #REQUIRED
+>
+<!ELEMENT nombrePiloto (#PCDATA)>
+<!ELEMENT equipo (#PCDATA)>
+<!ELEMENT puntos (#PCDATA)>
