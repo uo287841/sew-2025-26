@@ -41,7 +41,7 @@
 <!ATTLIST foto
   archivo CDATA #REQUIRED          
   descripcion CDATA #IMPLIED
-><!-- nombre del archivo local, e.g., "Panorama.jpg" -->
+>
 
 <!ELEMENT galeriaVideos (video+)>
 <!ELEMENT video EMPTY>
@@ -49,7 +49,7 @@
   archivo CDATA #REQUIRED          
   descripcion CDATA #IMPLIED
   duracion CDATA #IMPLIED          
-><!-- opcional, e.g., "00:01:23" --> <!-- nombre del archivo local, e.g., "Onboard.mp4" -->
+>
 
 <!ELEMENT geografia (origen)>
 <!ELEMENT origen (longitud, latitud, altitud)>
@@ -59,13 +59,13 @@
 <!ELEMENT distancia (#PCDATA)>
 <!ATTLIST distancia
   unidades CDATA #REQUIRED        
-> <!-- e.g., "m" -->
+> 
 <!ELEMENT puntoFinal (longitud, latitud, altitud)>
 <!ELEMENT sector (#PCDATA)>
 
 <!ELEMENT resultado (vencedor, tiempoTotal)>
 <!ELEMENT vencedor (#PCDATA)>
-<!ELEMENT tiempoTotal (#PCDATA)>   <!-- formato recomendado: HH:MM:SS.xxx -->
+<!ELEMENT tiempoTotal (#PCDATA)>   
 
 <!ELEMENT clasificacionMundial (piloto+)>
 <!ELEMENT piloto (nombrePiloto, equipo?, puntos)>
