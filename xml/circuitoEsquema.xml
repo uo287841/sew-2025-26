@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <circuito xmlns="http://www.uniovi.es/circuito"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uniovi.es/circuito circuito.xsd" id="circuito-misano-2025" version="1.0">
 
@@ -220,3 +221,89 @@
   </clasificacionMundial>
 
 </circuito>
+=======
+<circuito xmlns="http://www.uniovi.es"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.uniovi.es circuito.xsd">
+
+    <nombre>Misano World Circuit Marco Simoncelli</nombre>
+
+    <dimensiones>
+        <longitud unidad="metros">4226</longitud>
+        <anchura unidad="metros">14</anchura>
+    </dimensiones>
+
+    <carrera>
+        <fecha>2025-09-07</fecha>
+        <horaInicio>14:00:00</horaInicio>
+        <vueltas>27</vueltas>
+    </carrera>
+
+    <ubicacion>
+        <localidad>Misano Adriatico</localidad>
+        <pais>Italia</pais>
+    </ubicacion>
+
+    <patrocinador>Monster Energy</patrocinador>
+
+    <referencias>
+        <referencia>https://www.misanocircuit.com</referencia>
+        <referencia>https://en.wikipedia.org/wiki/Misano_World_Circuit_Marco_Simoncelli</referencia>
+        <referencia>https://www.motogp.com/en/circuit/Misano</referencia>
+    </referencias>
+
+    <galeriaFotos>
+        <foto>Panorama.jpg</foto>
+        <foto>RectaMeta.jpg</foto>
+        <foto>CurvaQuercia.jpg</foto>
+    </galeriaFotos>
+
+    <galeriaVideos>
+        <video>MisanoVuelo.mp4</video>
+    </galeriaVideos>
+
+    <puntoOrigen>
+        <longitud unidad="grados">12.6889</longitud>
+        <latitud>43.9631</latitud>
+        <altitud>10</altitud>
+    </puntoOrigen>
+
+    <tramos>
+        <tramo distancia="300">
+            <coordenadasFinales>
+                <longitud unidad="grados">12.6895</longitud>
+                <latitud>43.9635</latitud>
+                <altitud>11</altitud>
+            </coordenadasFinales>
+            <sector>1</sector>
+        </tramo>
+        <tramo distancia="500">
+            <coordenadasFinales>
+                <longitud unidad="grados">12.6900</longitud>
+                <latitud>43.9640</latitud>
+                <altitud>12</altitud>
+            </coordenadasFinales>
+            <sector>2</sector>
+        </tramo>
+        <tramo distancia="400">
+            <coordenadasFinales>
+                <longitud unidad="grados">12.6910</longitud>
+                <latitud>43.9645</latitud>
+                <altitud>13</altitud>
+            </coordenadasFinales>
+            <sector>3</sector>
+        </tramo>
+    </tramos>
+
+    <resultadoCarrera>
+        <vencedor>Francesco Bagnaia</vencedor>
+        <tiempo>PT41M32.123S</tiempo>
+    </resultadoCarrera>
+
+    <clasificacionMundial>
+        <piloto>Francesco Bagnaia</piloto>
+        <piloto>Jorge Martín</piloto>
+        <piloto>Marc Márquez</piloto>
+    </clasificacionMundial>
+</circuito>
+>>>>>>> 6cf23cc8f81062f43e6f9585a38549ea7ef3417a
