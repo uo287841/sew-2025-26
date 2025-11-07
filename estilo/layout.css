@@ -4,13 +4,13 @@
    ============================================================ 
    
    
-    |----------------------------------|
-    |   margin   ← espacio externo     |
-    |  |----------------------------|  |
-    |  |    padding  ← espacio int. |  |
-    |  |  [ contenido del elemento ]|  |
-    |  |----------------------------|  |
-    |----------------------------------|
+    |------------------------------------|
+    |     margin  ← espacio externo      |
+    |  |------------------------------|  |
+    |  |   padding  ← espacio int.    |  |
+    |  |  [ contenido del elemento ]  |  |
+    |  |------------------------------|  |
+    |------------------------------------|
     
     margin → espacio fuera del borde, separa un elemento de otro.
     padding → espacio dentro del borde, separa el contenido del borde.
@@ -24,7 +24,6 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   margin: 0 auto;
-  max-width: 1200px;
   padding: 0 1em;
 }
 
