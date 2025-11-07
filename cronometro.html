@@ -3,19 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="author" content="UO287841 - Luis Salvador Ferrero Carneiro" />
-    <meta name="description" content="MotoGP-Juegos" />
-    <meta name="keywords" content="moto, piloto, circuito" />
+    <meta name="description" content="MotoGP-Cronómetro" />
+    <meta name="keywords" content="moto, cronometro, tiempo" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Hojas de estilo comunes -->
     <link rel="stylesheet" href="estilo/estilo.css" />
     <link rel="stylesheet" href="estilo/layout.css" />
-    <title>MotoGP-Juegos</title>
+    <title>MotoGP-Cronómetro</title>
 
     <link
       rel="icon"
       type="image/x-icon"
       href="multimedia/img/favicon/favicon.ico"
     />
+
+    <!-- Script del cronómetro -->
+    <script src="js/cronometro.js" defer></script>
+    <script defer>
+      // Creamos el objeto global del cronómetro para que los botones lo usen
+      const crono = new Cronometro();
+    </script>
   </head>
 
   <body>
@@ -28,21 +36,25 @@
         <a href="circuito.html" title="Circuito">Circuito</a>
         <a href="metereologia.html" title="Metereología">Metereologia</a>
         <a href="clasificacion.html" title="Clasificacion">Clasificacion</a>
-        <a href="juegos.html" class="active" title="Juegos">Juegos</a>
+        <a href="juegos.html" title="Juegos">Juegos</a>
         <a href="ayuda.html" title="Ayuda">Ayuda</a>
       </nav>
 
       <p>
         Estás en: <a href="index.html">Inicio</a> &gt; &gt;
-        <strong>Juegos</strong>
+        <strong>Cronómetro</strong>
       </p>
     </header>
+
     <main>
-      <h2>Juegos MotoGP-Desktop</h2>
-      <ul>
-        <li><a href="memoria.html">Juego de memoria con cartas</a></li>
-        <li><a href="cronometro.html">Cronómetro</a></li>
-      </ul>
+      <h2>Cronómetro MotoGP-Desktop</h2>
+      <!-- Párrafo inicial con el tiempo -->
+      <p>00:00.0</p>
+
+      <!-- Botones de control -->
+      <button onclick="crono.arrancar()">Arrancar</button>
+      <button onclick="crono.parar()">Parar</button>
+      <button onclick="crono.reiniciar()">Reiniciar</button>
     </main>
   </body>
 </html>

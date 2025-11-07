@@ -7,25 +7,17 @@ class Cronometro {
     this.corriendo = null; // identificador del intervalo
   }
 
-  /**
-   * Método que arranca el cronómetro y guarda el instante de inicio
-   */
   arrancar() {
     try {
       this.inicio = Temporal.Now.instant();
-      console.log("Cronómetro iniciado con Temporal:", this.inicio.toString());
     } catch (error) {
       this.inicio = new Date();
-      console.log("Cronómetro iniciado con Date:", this.inicio.toISOString());
-    }
+     }
 
     // Ejecutar actualizar cada décima de segundo (100 ms)
     this.corriendo = setInterval(this.actualizar.bind(this), 100);
   }
 
-  /**
-   * Método que actualiza el tiempo transcurrido desde el inicio
-   */
   actualizar() {
     let ahora;
     try {
@@ -36,14 +28,52 @@ class Cronometro {
       this.tiempo = ahora - this.inicio; // diferencia en milisegundos
     }
 
-    // Mostrar el tiempo en consola (opcional para pruebas)
-    const totalSegundos = Math.floor(this.tiempo / 1000);
-    const minutos = Math.floor(totalSegundos / 60);
-    const segundos = totalSegundos % 60;
-    const decimas = Math.floor((this.tiempo % 1000) / 100);
+    // Mostrar el tiempo en el documento
+    this.mostrar();
+  }
 
-    console.log(
-      `Tiempo: ${minutos}m ${segundos}s ${decimas}d`
-    );
+  /**
+   * Método que muestra el tiempo en formato mm:ss.s dentro del primer <p> de <main>
+   */
+  mostrar() {
+    const totalSegundos = Math.floor(this.tiempo / 1000);
+    const minutos = parseInt(totalSegundos / 60);
+    const segundos = parseInt(totalSegundos % 60);
+    const decimas = parseInt((this.tiempo % 1000) / 100);
+
+    // Formatear con ceros a la izquierda
+    const minutosStr = String(minutos).padStart(2, "0");
+    const segundosStr = String(segundos).padStart(2, "0");
+
+    const cadena = `${minutosStr}:${segundosStr}.${decimas}`;
+
+    // Buscar el primer párrafo dentro de <main>
+    const parrafo = document.querySelector("main p");
+    if (parrafo) {
+      parrafo.textContent = cadena;
+    } else {
+      // Si no existe, lo creamos
+      const nuevoParrafo = document.createElement("p");
+      nuevoParrafo.textContent = cadena;
+      document.querySelector("main").appendChild(nuevoParrafo);
+    }
+  }
+
+  /**
+   * Método que detiene el cronómetro
+   */
+  parar() {
+    clearInterval(this.corriendo);
+    this.corriendo = null;
+  }
+
+  /**
+   * Método que reinicia el cronómetro
+   */
+  reiniciar() {
+    clearInterval(this.corriendo);
+    this.corriendo = null;
+    this.tiempo = 0;
+    this.mostrar();
   }
 }
