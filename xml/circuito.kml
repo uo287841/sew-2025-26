@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Misano World Circuit Marco Simoncelli - Planimetría</name>
+    <description>Generado desde circuitoEsquema.xml el 2025-11-01 21:53:37Z (xml2kml.py)</description>
+
+    <!-- Style for the circuit line -->
+    <Style id="circuitLineStyle">
+      <LineStyle>
+        <color>ff0000ff</color> <!-- AABBGGRR: aquí rojo (FF0000FF) -->
+        <width>4</width>
+      </LineStyle>
+    </Style>
+
+    <!-- Origin marker -->
+    <Placemark>
+      <name>Origen</name>
+      <description>Origen definido en geografía</description>
+      <Point>
+        <coordinates>12.684167,43.961944,25.36</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- Full circuit as LineString -->
+    <Placemark>
+      <name>Misano World Circuit Marco Simoncelli - Track</name>
+      <styleUrl>#circuitLineStyle</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+12.684167,43.961944,25.36
+12.682222,43.959444,25.77
+12.681111,43.959444,25.78
+12.680278,43.958056,28.24
+12.676944,43.958333,29.06
+12.677500,43.958889,28.21
+12.678611,43.958611,28.34
+12.683611,43.963333,19.25
+12.679444,43.961944,24.21
+12.678333,43.962222,25.59
+12.685278,43.964722,20.74
+12.688611,43.964167,19.95
+12.690000,43.963333,20.40
+12.689444,43.961944,22.11
+12.688611,43.963611,20.04
+12.685556,43.964167,20.41
+12.684167,43.961944,25.36
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <!-- Optional: placemarks per tramo -->
+
+    <Placemark>
+      <name>Tramo 1</name>
+      <description>Sector: 1 | Distancia: 230 m</description>
+      <Point>
+        <coordinates>12.682222,43.959444,25.77</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 2</name>
+      <description>Sector: 1 | Distancia: 190 m</description>
+      <Point>
+        <coordinates>12.681111,43.959444,25.78</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 3</name>
+      <description>Sector: 1 | Distancia: 260 m</description>
+      <Point>
+        <coordinates>12.680278,43.958056,28.24</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 4</name>
+      <description>Sector: 1 | Distancia: 320 m</description>
+      <Point>
+        <coordinates>12.676944,43.958333,29.06</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 5</name>
+      <description>Sector: 1 | Distancia: 280 m</description>
+      <Point>
+        <coordinates>12.677500,43.958889,28.21</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 6</name>
+      <description>Sector: 1 | Distancia: 300 m</description>
+      <Point>
+        <coordinates>12.678611,43.958611,28.34</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 7</name>
+      <description>Sector: 2 | Distancia: 250 m</description>
+      <Point>
+        <coordinates>12.683611,43.963333,19.25</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 8</name>
+      <description>Sector: 2 | Distancia: 310 m</description>
+      <Point>
+        <coordinates>12.679444,43.961944,24.21</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 9</name>
+      <description>Sector: 2 | Distancia: 280 m</description>
+      <Point>
+        <coordinates>12.678333,43.962222,25.59</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 10</name>
+      <description>Sector: 2 | Distancia: 270 m</description>
+      <Point>
+        <coordinates>12.685278,43.964722,20.74</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 11</name>
+      <description>Sector: 2 | Distancia: 300 m</description>
+      <Point>
+        <coordinates>12.688611,43.964167,19.95</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 12</name>
+      <description>Sector: 3 | Distancia: 270 m</description>
+      <Point>
+        <coordinates>12.690000,43.963333,20.40</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 13</name>
+      <description>Sector: 3 | Distancia: 250 m</description>
+      <Point>
+        <coordinates>12.689444,43.961944,22.11</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 14</name>
+      <description>Sector: 3 | Distancia: 290 m</description>
+      <Point>
+        <coordinates>12.688611,43.963611,20.04</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 15</name>
+      <description>Sector: 3 | Distancia: 210 m</description>
+      <Point>
+        <coordinates>12.685556,43.964167,20.41</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tramo 16</name>
+      <description>Sector: 3 | Distancia: 210 m</description>
+      <Point>
+        <coordinates>12.684167,43.961944,25.36</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>

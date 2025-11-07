@@ -1,85 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<circuito xmlns="http://www.uniovi.es"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.uniovi.es circuito.xsd">
+<circuito xmlns="http://www.uniovi.es/circuito"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uniovi.es/circuito circuito.xsd" id="circuito-misano-2025" version="1.0">
 
-    <nombre>Misano World Circuit Marco Simoncelli</nombre>
+  <nombre>Misano World Circuit Marco Simoncelli</nombre>
 
-    <dimensiones>
-        <longitud unidad="metros">4226</longitud>
-        <anchura unidad="metros">14</anchura>
-    </dimensiones>
+  <medidas>
+    <longitud unidades="m">4226</longitud>
+    <anchuraMedia unidades="m">14</anchuraMedia>
+  </medidas>
 
-    <carrera>
-        <fecha>2025-09-07</fecha>
-        <horaInicio>14:00:00</horaInicio>
-        <vueltas>27</vueltas>
-    </carrera>
+  <evento>
+    <fecha>2025-09-14</fecha>
+    <horaInicio>14:00:00</horaInicio>
+    <numeroVueltas>27</numeroVueltas>
+  </evento>
 
-    <ubicacion>
-        <localidad>Misano Adriatico</localidad>
-        <pais>Italia</pais>
-    </ubicacion>
+  <ubicacion>
+    <localidadProxima>Misano Adriatico</localidadProxima>
+    <pais>Italia</pais>
+  </ubicacion>
 
-    <patrocinador>Monster Energy</patrocinador>
+  <patrocinio>
+    <patrocinadorPrincipal>Red Bull</patrocinadorPrincipal>
+  </patrocinio>
 
-    <referencias>
-        <referencia>https://www.misanocircuit.com</referencia>
-        <referencia>https://en.wikipedia.org/wiki/Misano_World_Circuit_Marco_Simoncelli</referencia>
-        <referencia>https://www.motogp.com/en/circuit/Misano</referencia>
-    </referencias>
+  <referencias>
+    <referencia>Official MotoGP — Results &amp; standings (motogp.com)</referencia>
+    <referencia>Wikipedia — San Marino and Rimini Riviera Grand Prix (2025)</referencia>
+    <referencia>Crash.net — Misano 2025 race report and standings</referencia>
+    <referencia>Motorsport.com — Race report: San Marino GP 2025</referencia>
+  </referencias>
 
-    <galeriaFotos>
-        <foto>Panorama.jpg</foto>
-        <foto>RectaMeta.jpg</foto>
-        <foto>CurvaQuercia.jpg</foto>
-    </galeriaFotos>
+  <galeriaFotos>
+    <foto archivo="../multimedia/img/circuito/panoramica.jpg" descripcion="Vista panorámica del circuito"/>
+  </galeriaFotos>
 
-    <galeriaVideos>
-        <video>MisanoVuelo.mp4</video>
-    </galeriaVideos>
+  <galeriaVideos>
+    <video archivo="../multimedia/video/circuito/panoramica.webm" descripcion="Vista aérea del circuito" duracion="PT8S"/>
+  </galeriaVideos>
 
-    <puntoOrigen>
-        <longitud unidad="grados">12.6889</longitud>
-        <latitud>43.9631</latitud>
-        <altitud>10</altitud>
-    </puntoOrigen>
+  <geografia>
+    <origen>
+      <longitud unidades="deg">12.684167</longitud>
+      <latitud unidades="deg">43.961944</latitud>
+      <altitud unidades="m">25.36</altitud>
+    </origen>
+  </geografia>
 
-    <tramos>
-        <tramo distancia="300">
-            <coordenadasFinales>
-                <longitud unidad="grados">12.6895</longitud>
-                <latitud>43.9635</latitud>
-                <altitud>11</altitud>
-            </coordenadasFinales>
-            <sector>1</sector>
-        </tramo>
-        <tramo distancia="500">
-            <coordenadasFinales>
-                <longitud unidad="grados">12.6900</longitud>
-                <latitud>43.9640</latitud>
-                <altitud>12</altitud>
-            </coordenadasFinales>
-            <sector>2</sector>
-        </tramo>
-        <tramo distancia="400">
-            <coordenadasFinales>
-                <longitud unidad="grados">12.6910</longitud>
-                <latitud>43.9645</latitud>
-                <altitud>13</altitud>
-            </coordenadasFinales>
-            <sector>3</sector>
-        </tramo>
-    </tramos>
+  <tramos>
+    <tramo>
+      <distancia unidades="m">230</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.682222</longitud>
+        <latitud unidades="deg">43.959444</latitud>
+        <altitud unidades="m">25.77</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">190</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.681111</longitud>
+        <latitud unidades="deg">43.959444</latitud>
+        <altitud unidades="m">25.78</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">260</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.680278</longitud>
+        <latitud unidades="deg">43.958056</latitud>
+        <altitud unidades="m">28.24</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">320</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.676944</longitud>
+        <latitud unidades="deg">43.958333</latitud>
+        <altitud unidades="m">29.06</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">280</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.677500</longitud>
+        <latitud unidades="deg">43.958889</latitud>
+        <altitud unidades="m">28.21</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">300</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.678611</longitud>
+        <latitud unidades="deg">43.958611</latitud>
+        <altitud unidades="m">28.34</altitud>
+      </puntoFinal>
+      <sector>1</sector>
+    </tramo>
 
-    <resultadoCarrera>
-        <vencedor>Francesco Bagnaia</vencedor>
-        <tiempo>PT41M32.123S</tiempo>
-    </resultadoCarrera>
+    <tramo>
+      <distancia unidades="m">250</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.683611</longitud>
+        <latitud unidades="deg">43.963333</latitud>
+        <altitud unidades="m">19.25</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">310</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.679444</longitud>
+        <latitud unidades="deg">43.961944</latitud>
+        <altitud unidades="m">24.21</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">280</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.678333</longitud>
+        <latitud unidades="deg">43.962222</latitud>
+        <altitud unidades="m">25.59</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">270</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.685278</longitud>
+        <latitud unidades="deg">43.964722</latitud>
+        <altitud unidades="m">20.74</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">300</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.688611</longitud>
+        <latitud unidades="deg">43.964167</latitud>
+        <altitud unidades="m">19.95</altitud>
+      </puntoFinal>
+      <sector>2</sector>
+    </tramo>
 
-    <clasificacionMundial>
-        <piloto>Francesco Bagnaia</piloto>
-        <piloto>Jorge Martín</piloto>
-        <piloto>Marc Márquez</piloto>
-    </clasificacionMundial>
+    <tramo>
+      <distancia unidades="m">270</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.690000</longitud>
+        <latitud unidades="deg">43.963333</latitud>
+        <altitud unidades="m">20.40</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">250</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.689444</longitud>
+        <latitud unidades="deg">43.961944</latitud>
+        <altitud unidades="m">22.11</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">290</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.688611</longitud>
+        <latitud unidades="deg">43.963611</latitud>
+        <altitud unidades="m">20.04</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">210</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.685556</longitud>
+        <latitud unidades="deg">43.964167</latitud>
+        <altitud unidades="m">20.41</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+    <tramo>
+      <distancia unidades="m">210</distancia>
+      <puntoFinal>
+        <longitud unidades="deg">12.684167</longitud>
+        <latitud unidades="deg">43.961944</latitud>
+        <altitud unidades="m">25.36</altitud>
+      </puntoFinal>
+      <sector>3</sector>
+    </tramo>
+  </tramos>
+
+  <resultado>
+    <vencedor>Marc Márquez</vencedor>
+    <tiempoTotal>00:41:20.898</tiempoTotal>
+  </resultado>
+
+  <clasificacionMundial>
+    <piloto posicion="1">
+      <nombrePiloto>Marc Márquez</nombrePiloto>
+      <equipo>Ducati Lenovo Team</equipo>
+      <puntos>512</puntos>
+    </piloto>
+    <piloto posicion="2">
+      <nombrePiloto>Álex Márquez</nombrePiloto>
+      <equipo>BK8 Gresini Racing</equipo>
+      <puntos>330</puntos>
+    </piloto>
+    <piloto posicion="3">
+      <nombrePiloto>Marco Bezzecchi</nombrePiloto>
+      <equipo>Aprilia Racing</equipo>
+      <puntos>282</puntos>
+    </piloto>
+  </clasificacionMundial>
+
 </circuito>
