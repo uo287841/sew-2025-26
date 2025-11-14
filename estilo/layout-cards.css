@@ -22,3 +22,20 @@ main > h2 {
   }
 }
 
+/*
+
+main article[data-estado="oculta"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.5);
+}
+
+main article[data-estado="revelada"]:hover {
+  transform: rotateY(180deg); 
+  cursor: default;
+}
+
+
+main article[data-estado="revelada"] {
+  pointer-events: none;
+}
+*/
