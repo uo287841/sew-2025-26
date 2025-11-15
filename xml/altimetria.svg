@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     width="1200" 
+     height="600" 
+     viewBox="0 0 1200 600">
+  <title>Perfil Altimétrico del Circuito</title>
+  <defs>
+    <style>
+      .grid { stroke: #ccc; stroke-width: 0.5; }
+      .axis { stroke: #000; stroke-width: 2; }
+      .profile { fill: rgba(70, 130, 180, 0.3); stroke: steelblue; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #000; }
+      .label { font-family: Arial, sans-serif; font-size: 10px; fill: #666; }
+    </style>
+  </defs>
+  
+  <!-- Fondo blanco -->
+  <rect width="1200" height="600" fill="white"/>
+  <text x="600" y="40" class="title" text-anchor="middle">Perfil Altimétrico: Misano World Circuit Marco Simoncelli</text>
+  <line x1="80" y1="520.0" x2="1120" y2="520.0" class="grid"/>
+  <text x="70" y="525.0" class="label" text-anchor="end">19.2m</text>
+  <line x1="80" y1="432.0" x2="1120" y2="432.0" class="grid"/>
+  <text x="70" y="437.0" class="label" text-anchor="end">21.2m</text>
+  <line x1="80" y1="344.0" x2="1120" y2="344.0" class="grid"/>
+  <text x="70" y="349.0" class="label" text-anchor="end">23.2m</text>
+  <line x1="80" y1="256.0" x2="1120" y2="256.0" class="grid"/>
+  <text x="70" y="261.0" class="label" text-anchor="end">25.1m</text>
+  <line x1="80" y1="168.0" x2="1120" y2="168.0" class="grid"/>
+  <text x="70" y="173.0" class="label" text-anchor="end">27.1m</text>
+  <line x1="80" y1="80.0" x2="1120" y2="80.0" class="grid"/>
+  <text x="70" y="85.0" class="label" text-anchor="end">29.1m</text>
+  <line x1="80.0" y1="80" x2="80.0" y2="520" class="grid"/>
+  <text x="80.0" y="540" class="label" text-anchor="middle">0m</text>
+  <line x1="184.0" y1="80" x2="184.0" y2="520" class="grid"/>
+  <text x="184.0" y="540" class="label" text-anchor="middle">422m</text>
+  <line x1="288.0" y1="80" x2="288.0" y2="520" class="grid"/>
+  <text x="288.0" y="540" class="label" text-anchor="middle">844m</text>
+  <line x1="392.0" y1="80" x2="392.0" y2="520" class="grid"/>
+  <text x="392.0" y="540" class="label" text-anchor="middle">1266m</text>
+  <line x1="496.0" y1="80" x2="496.0" y2="520" class="grid"/>
+  <text x="496.0" y="540" class="label" text-anchor="middle">1688m</text>
+  <line x1="600.0" y1="80" x2="600.0" y2="520" class="grid"/>
+  <text x="600.0" y="540" class="label" text-anchor="middle">2110m</text>
+  <line x1="704.0" y1="80" x2="704.0" y2="520" class="grid"/>
+  <text x="704.0" y="540" class="label" text-anchor="middle">2532m</text>
+  <line x1="808.0" y1="80" x2="808.0" y2="520" class="grid"/>
+  <text x="808.0" y="540" class="label" text-anchor="middle">2954m</text>
+  <line x1="912.0" y1="80" x2="912.0" y2="520" class="grid"/>
+  <text x="912.0" y="540" class="label" text-anchor="middle">3376m</text>
+  <line x1="1016.0" y1="80" x2="1016.0" y2="520" class="grid"/>
+  <text x="1016.0" y="540" class="label" text-anchor="middle">3798m</text>
+  <line x1="1120.0" y1="80" x2="1120.0" y2="520" class="grid"/>
+  <text x="1120.0" y="540" class="label" text-anchor="middle">4220m</text>
+  <line x1="80" y1="80" x2="80" y2="520" class="axis"/>
+  <line x1="80" y1="520" x2="1120" y2="520" class="axis"/>
+  <text x="600" y="580" class="text" text-anchor="middle">Distancia (metros)</text>
+  <text x="20" y="300" class="text" text-anchor="middle" transform="rotate(-90 20 300)">Altitud (metros)</text>
+  <polyline points="80.0,245.95310907237513 136.6824644549763,227.5637104994903 183.50710900473933,227.1151885830784 247.5829383886256,116.7787971457696 326.4454976303318,80.0 395.45023696682466,118.12436289500499 469.38388625592415,112.29357798165131 530.9952606635071,520.0 607.3933649289099,297.53312945973494 676.3981042654029,235.6371049949031 742.9383886255924,453.1702344546382 816.872037914692,488.6034658511723 883.4123222748815,468.4199796126402 945.0236966824644,391.72273190621814 1016.4928909952606,484.5667686034659 1068.2464454976302,467.9714576962283 1120.0,245.95310907237513 1120,520 80,520" class="profile"/>
+  <circle cx="326.4454976303318" cy="80.0" r="5" fill="red"/>
+  <text x="326.4454976303318" y="70.0" class="text" text-anchor="middle">Máx: 29.1m</text>
+  <circle cx="530.9952606635071" cy="520.0" r="5" fill="blue"/>
+  <text x="530.9952606635071" y="540.0" class="text" text-anchor="middle">Mín: 19.2m</text>
+  <text x="600" y="550" class="label" text-anchor="middle">Distancia total: 4220m | Desnivel: 9.8m</text>
+</svg>

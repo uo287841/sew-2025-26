@@ -1,94 +1,58 @@
 /* ============================================================
    Luis Salvador Ferrero Carneiro — UO287841
-   MotoGP-Desktop: Hoja de estilo general
-   ------------------------------------------------------------
-   Paleta de colores:
-     Serenity:  #54627b 
-     Champagne: #ecd5bb 
-     White:     #ffffff
-     Crimson:   #710117
+   MotoGP-Desktop: Hoja de estilo general (solo estilo visual)
    ============================================================ */
 
-
-/* Especificidad: 0 0 1 → (1) */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 1rem;           /* Tamaño base adaptable */
+  font-size: 1rem;
   line-height: 1.6;
-  background-color: #ffffff; /* White */
+  background-color: #ffffff;
   color: #54627b; /* Serenity */
 }
 
-/* Especificidad: 0 0 1 → (1) */
-/* Encabezado principal */
+/* Titulares: solo color y tipografía */
 h1 {
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 0.5em;
+  color: #710117; /* Crimson */
 }
 
-/* Especificidad: 0 0 1 → (1) */
-/* Subtítulos y otros encabezados */
 h2, h3, h4, h5, h6 {
   font-weight: 600;
-  margin-top: 1.2em;
-  margin-bottom: 0.4em;
 }
 
-
-/* Especificidad: 0 0 1 → (1) */
+/* Header: parte visual */
 header {
   background-color: #ecd5bb; /* Champagne */
 }
 
-
-/* Especificidad: 0 0 2 → (2) */
-header > p {
-  font-size: 0.875em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-
-/* Especificidad: 0 0 2 → (2) */
+/* Enlaces del header */
 header a {
-  color: #710117; /* Crimson */
-  text-decoration-line: none;
-  font-weight: normal;
+  color: #710117;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-
-/* Especificidad: 0 1 2 → (3) */
 header a:hover {
-  color: #54627b; /* Serenity */
-  text-decoration-line: underline;
+  color: #54627b;
+  text-decoration: underline;
 }
 
-
-/* Especificidad: 0 1 2 → (3) */
 header a:focus {
-  outline: 2px dashed #ecd5bb; /* Champagne */
+  outline: 2px dashed #ecd5bb;
   outline-offset: 4px;
 }
 
-
-/* Especificidad: 0 0 1 → (1) */
-h1 {
-  color: #710117; /* Crimson */
-}
-
-
-/* Especificidad: 0 0 1 → (1) */
+/* Nav color */
 nav {
-  color: #710117; /* Crimson */
+  color: #710117;
 }
 
-
-/* Especificidad: 0 1 0 → (1) */
+/* Enlace activo */
 .active {
-  color: #710117; /* Crimson */
+  color: #710117;
   font-weight: bold;
   text-decoration: underline;
 }

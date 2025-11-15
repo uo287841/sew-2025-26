@@ -3,7 +3,6 @@
    MotoGP-Desktop: Hoja de maquetación (layout.css)
    ============================================================ 
    
-   
     |----------------------------------|
     |   margin   ← espacio externo     |
     |  |----------------------------|  |
@@ -14,71 +13,104 @@
     
     margin → espacio fuera del borde, separa un elemento de otro.
     padding → espacio dentro del borde, separa el contenido del borde.
-   
-   */
+   ------------------------------------------------------------ */
 
 
-/* Especificidad: 0 0 1 → (1) */
-/* Cuerpo general: se centra el contenido y se asegura una lectura cómoda */
+/* ============================================================
+   MAQUETACIÓN GENERAL
+   ============================================================ */
+
+/* Cuerpo general */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
-  margin: 0 auto;
-  max-width: 1200px;
+  margin: 0;
+  max-width: none;
   padding: 0 1em;
 }
 
+/* Margen y espaciado de encabezados */
+h1 {
+  margin-bottom: 0.5em;
+}
 
-/* Especificidad: 0 0 1 → (1) */
-/* Encabezado principal: disposición flexible de título y navegación */
+h2, h3, h4, h5, h6 {
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+section > h1 ~ *,
+section > h2 ~ *,
+section > h3 ~ *,
+section > h4 ~ *,
+section > h5 ~ *,
+section > h6 ~ * {
+  margin-left: 2.5em; 
+}
+
+
+
+/* ============================================================
+   HEADER — Maquetación
+   ============================================================ */
+
 header {
-  display: flex;                 /* Activar Flexbox */
-  flex-wrap: wrap;               /* Permitir que se adapte en pantallas pequeñas */
-  justify-content: space-between;/* Separar título y menú */
-  align-items: center;           /* Alinear verticalmente */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.20em 0;
-  gap: 0.10em;                      /* Espacio entre elementos hijos */
+  gap: 0.10em;
 }
 
-/* Especificidad: 0 0 2 → (2) */
-/* Párrafo de migas dentro del encabezado, debajo del nav */
+/* Párrafo de migas */
 header > p {
-  flex-basis: 100%; /* Ocupa toda la anchura, debajo del nav */
+  flex-basis: 100%;
   margin-top: 0.1em;
+  margin-bottom: 0.5em; /* MOVIDO desde estilo.css */
 }
 
 
+/* ============================================================
+   NAVEGACIÓN — Maquetación
+   ============================================================ */
 
-/* Especificidad: 0 0 1 → (1) */
-/* Navegación principal dentro del encabezado */
 nav {
-  display: flex;                 /* Flexbox para el menú */
-  flex-wrap: wrap;               /* Adaptabilidad en móviles */
-  justify-content: center;       /* Centrar horizontalmente los enlaces */
-  gap: 1em;                      /* Espaciado uniforme entre enlaces */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
 }
 
-
-/* Especificidad: 0 0 2 → (2) */
-/* Enlaces dentro del menú: ajuste de bloque flexible y alineación */
 nav a {
-  display: flex;                 /* Permite aplicar alineación vertical del texto */
-  align-items: center;           /* Centrar texto verticalmente */
-  justify-content: center;       /* Centrar horizontalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.5em 0.75em;
 }
 
 
-/* Especificidad: 0 0 1 → (1) */
-/* Sección principal del contenido */
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
+
 main {
   display: block;
   padding: 1em 0;
+  margin-left: 1.5em;
+}
+
+/* Centrado automático de imágenes dentro de picture */
+main section picture {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 
-/* Especificidad: 0 0 1 → (1) */
-/* Pie de página: centrado y con espacio superior */
+/* ============================================================
+   FOOTER — Maquetación
+   ============================================================ */
+
 footer {
   text-align: center;
   margin-top: 2em;
@@ -86,70 +118,38 @@ footer {
   padding: 1em 0;
 }
 
-main section picture {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;  /* Asegura que la imagen no se desborde del contenedor */
-}
-
-
-
-
-
 
 /* ============================================================
-   ADAPTABILIDAD — MEDIA QUERIES 
-   ============================================================ 
+   MEDIA QUERIES — Adaptabilidad
+   ============================================================ */
 
-   Las media queries permiten cambiar el diseño según el tamaño del dispositivo.
-
-   @media (condición) {
-  /* reglas CSS que se aplican solo si se cumple la condición 
-}
-
-   
-   */
-
-/* 
-   Dispositivos móviles o pantallas pequeñas (320px–799px)
-   Se redefinen propiedades de flexbox y visibilidad.
-*/
+/* Dispositivos pequeños (móviles) */
 @media (min-width: 320px) and (max-width: 799px) {
 
-  /* Especificidad: 0 0 1 → (1) */
-  /* Redefinición: flex-direction, justify-content */
   header {
     display: flex;
-    flex-direction: column;  /* (Redefinición) antes: row por defecto */
-    align-items: center;     /* Centrar título y menú verticalmente */
-    justify-content: center; /* (Redefinición) antes: space-between */
-    gap: 0.5em;              /* (Redefinición) antes: 0.10em */
-  }
-
-  /* Especificidad: 0 0 1 → (1) */
-  /* Redefinición: disposición vertical del menú */
-  nav {
-    flex-direction: column;  /* (Redefinición) antes: row */
+    flex-direction: column;
     align-items: center;
-    gap: 0.1em;              /* (Redefinición) antes: 1em */
+    justify-content: center;
+    gap: 0.5em;
   }
 
-  /* Especificidad: 0 0 2 → (2) */
-  /* Redefinición: tamaño y alineación de los enlaces */
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+  }
+
   nav a {
-    width: 100%;             /* Ocupar ancho completo */
-    justify-content: center; /* (Redefinición) mantener centrado */
-    padding: 0.05em 0;       /* (Redefinición) más alto para tocar fácilmente */
+    width: 100%;
+    justify-content: center;
+    padding: 0.05em 0;
   }
 
-  /* Especificidad: 0 0 2 → (2) */
-  /* Ocultar las migas de navegación en móviles */
   header > p {
-    display: none;           /* (Redefinición) antes: visible */
+    display: none; /* Oculta migas en móviles */
   }
 
-  /* Especificidad: 0 0 1 → (1) */
-  /* Adaptabilidad multimedia: vídeo y audio */
   video,
   audio {
     width: 100%;
