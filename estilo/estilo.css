@@ -1,7 +1,3 @@
-/* ============================================================
-   Luis Salvador Ferrero Carneiro — UO287841
-   MotoGP-Desktop: Hoja de estilo general (solo estilo visual)
-   ============================================================ */
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -21,6 +17,7 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-weight: 600;
+  color: #710117; /* Serenity */
 }
 
 /* Header: parte visual */
@@ -55,4 +52,15 @@ nav {
   color: #710117;
   font-weight: bold;
   text-decoration: underline;
+}
+
+dt {
+  font-weight: 700;
+  color: #54627b;
+  margin-top: 0.5em;
+}
+
+dd {
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
 }

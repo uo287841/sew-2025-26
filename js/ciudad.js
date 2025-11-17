@@ -29,18 +29,28 @@ class Ciudad {
     }
 
     getInformacionSecundaria() {
-        return "<ul>" +
-               "<li><strong>Gentilicio:</strong> " + this.gentilicio + "</li>" +
-               "<li><strong>Población:</strong> " + this.poblacion + " habitantes</li>" +
-               "</ul>";
+        // Usamos <dl> (definition list) que es semántico y W3C válido
+        return "<dl>" +
+               "<dt>Gentilicio</dt><dd>" + this.gentilicio + "</dd>" +
+               "<dt>Población</dt><dd>" + this.poblacion + " habitantes</dd>" +
+               "</dl>";
     }
 
     writeCoordenadas() {
         const main = document.querySelector('main');
         if (main) {
-            const parrafo = document.createElement('p');
-            parrafo.innerHTML = "<strong>Coordenadas:</strong> Latitud " + this.latitud + "°, Longitud " + this.longitud + "°";
-            main.appendChild(parrafo);
+            // Usamos <dl> para las coordenadas también
+            const dl = document.createElement('dl');
+            
+            const dt = document.createElement('dt');
+            dt.textContent = 'Coordenadas';
+            
+            const dd = document.createElement('dd');
+            dd.textContent = 'Latitud ' + this.latitud + '°, Longitud ' + this.longitud + '°';
+            
+            dl.appendChild(dt);
+            dl.appendChild(dd);
+            main.appendChild(dl);
         }
     }
 
@@ -48,18 +58,42 @@ class Ciudad {
         const main = document.querySelector('main');
         
         if (main) {
-            const parrafoNombre = document.createElement('p');
-            parrafoNombre.innerHTML = "<strong>Ciudad:</strong> " + this.getNombre();
-            main.appendChild(parrafoNombre);
+            // Información básica con dl (definition list)
+            const dlBasica = document.createElement('dl');
+
+            // Información Principal
+            const h3_principal = document.createElement('h3');
+            h3_principal.textContent = 'Información Principal';
+            main.appendChild(h3_principal);
             
-            const parrafoPais = document.createElement('p');
-            parrafoPais.innerHTML = "<strong>País:</strong> " + this.getPais();
-            main.appendChild(parrafoPais);
+            // Ciudad
+            const dtCiudad = document.createElement('dt');
+            dtCiudad.textContent = 'Ciudad';
+            const ddCiudad = document.createElement('dd');
+            ddCiudad.textContent = this.getNombre();
+            dlBasica.appendChild(dtCiudad);
+            dlBasica.appendChild(ddCiudad);
+            
+            // País
+            const dtPais = document.createElement('dt');
+            dtPais.textContent = 'País';
+            const ddPais = document.createElement('dd');
+            ddPais.textContent = this.getPais();
+            dlBasica.appendChild(dtPais);
+            dlBasica.appendChild(ddPais);
+            
+            main.appendChild(dlBasica);
+            
+            // Información secundaria
+            const h3_secubdario = document.createElement('h3');
+            h3_secubdario.textContent = 'Información Adicional';
+            main.appendChild(h3_secubdario);
             
             const section = document.createElement('section');
             section.innerHTML = this.getInformacionSecundaria();
             main.appendChild(section);
             
+            // Coordenadas
             this.writeCoordenadas();
         }
     }
