@@ -1,0 +1,40 @@
+/* MotoGP-Desktop */
+/* Hoja de estilo para el layout del juego de memoria con cartas usando Grid */
+
+/* Regla para el contenedor principal con Grid Layout */
+/* Disposición en cuadrícula de 4x3 elementos (más la fila del título) */
+/* especificidad: 001 */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto repeat(3, 1fr);
+    gap: 1em;
+    padding: 2em;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Regla para que el encabezado h2 ocupe toda la primera fila */
+/* especificidad: 002 */
+main h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Tarea 6: Adaptabilidad para dispositivos móviles */
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    /* Cambiar la disposición a 2x6 para móviles */
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto repeat(6, 1fr);
+        gap: 0.5em;
+        padding: 1em;
+    }
+    
+    /* El h2 sigue ocupando toda la fila */
+    main h2 {
+        grid-column: 1 / -1;
+    }
+}
