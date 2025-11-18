@@ -14,14 +14,6 @@
   <title>MotoGP - Cronómetro</title>
 
   <link rel="icon" type="image/x-icon" href="multimedia/img/favicon/favicon.ico" />
-
-  <script src="js/cronometro.js"></script>
-  <script>
-    var crono;
-    window.addEventListener("DOMContentLoaded", function () {
-      crono = new Cronometro();
-    });
-  </script>
 </head>
 
 <body>
@@ -49,10 +41,18 @@
 
     <p>00:00.0</p>
 
-    <button onclick="crono.arrancar()">Arrancar</button>
-    <button onclick="crono.parar()">Parar</button>
-    <button onclick="crono.reiniciar()">Reiniciar</button>
+    <section>
+      <button onclick="crono.arrancar()">Arrancar</button>
+      <button onclick="crono.parar()">Parar</button>
+      <button onclick="crono.reiniciar()">Reiniciar</button>
+    </section>
   </main>
+
+  <script src="js/cronometro.js"></script>
+  <script>
+    // Crear el objeto cronómetro
+    var crono = new Cronometro();
+  </script>
 </body>
 
 </html>
