@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="estilo/layout-cards.css" />
   <title>MotoGP-Juego de Memoria</title>
 
+  <!-- Enlazar cronometro.js ANTES de memoria.js -->
+  <script src="js/cronometro.js"></script>
   <script src="js/memoria.js"></script>
 
   <link rel="icon" type="image/x-icon" href="multimedia/img/favicon/favicon.ico" />
@@ -42,6 +44,9 @@
 
   <main>
     <h2>Juego de memoria con cartas</h2>
+
+    <!-- Elemento para mostrar el cronómetro -->
+    <p>00:00.0</p>
 
     <!-- Carta 1: Honda -->
     <article onclick="memoriaGame.voltearCarta(this)">

@@ -2,12 +2,12 @@
 /* Hoja de estilo para el layout del juego de memoria con cartas usando Grid */
 
 /* Regla para el contenedor principal con Grid Layout */
-/* Disposición en cuadrícula de 4x3 elementos (más la fila del título) */
+/* Disposición en cuadrícula de 4x3 elementos (más la fila del título y cronómetro) */
 /* especificidad: 001 */
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto repeat(3, 1fr);
+    grid-template-rows: auto auto repeat(3, 1fr);
     gap: 1em;
     padding: 2em;
     justify-items: center;
@@ -22,13 +22,24 @@ main h2 {
     margin: 0;
 }
 
+/* Regla para que el cronómetro (p) ocupe toda la segunda fila */
+/* especificidad: 002 */
+main p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.5em 0;
+    color: #d32f2f;
+}
+
 /* Tarea 6: Adaptabilidad para dispositivos móviles */
 /* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
     /* Cambiar la disposición a 2x6 para móviles */
     main {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto repeat(6, 1fr);
+        grid-template-rows: auto auto repeat(6, 1fr);
         gap: 0.5em;
         padding: 1em;
     }
@@ -36,5 +47,11 @@ main h2 {
     /* El h2 sigue ocupando toda la fila */
     main h2 {
         grid-column: 1 / -1;
+    }
+    
+    /* El cronómetro (p) también ocupa toda la fila */
+    main p {
+        grid-column: 1 / -1;
+        font-size: 1.5em;
     }
 }
