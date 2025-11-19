@@ -17,6 +17,9 @@ class Memoria {
         this.primera_carta = null;
         this.segunda_carta = null;
         
+        this.juegoIniciado = false;
+        this.cronometro = new Cronometro();
+        
         // Inicializar el juego cuando se cree la instancia
         this.barajarCartas();
     }
@@ -31,13 +34,13 @@ class Memoria {
         // Obtener todas las cartas (elementos article)
         const cartas = main.children;
         
-        // Calcular el número de cartas (children incluye el h2, por eso restamos 1)
-        const numeroCartas = cartas.length - 1;
+        // Calcular el número de cartas (children incluye el h2 y el p del cronómetro)
+        const numeroCartas = cartas.length - 2;
         
         // Barajar las cartas usando el algoritmo de Fisher-Yates
-        for (let i = numeroCartas; i >= 2; i--) {
-            // Generar un índice aleatorio entre 1 e i (saltamos el h2 que está en posición 0)
-            const j = Math.floor(Math.random() * i) + 1;
+        for (let i = numeroCartas + 1; i >= 3; i--) {
+            // Generar un índice aleatorio entre 2 e i (saltamos el h2 y el p)
+            const j = Math.floor(Math.random() * (i - 2)) + 2;
             
             // Mover la carta en posición j al final
             main.appendChild(cartas[j]);
@@ -99,8 +102,12 @@ class Memoria {
         
         // Comprobar si todas las cartas están reveladas
         if (todasLasCartas.length === cartasReveladas.length) {
+            // Detener el cronómetro
+            this.cronometro.parar();
+            
             // El juego ha terminado
-            alert('¡Felicidades! Has completado el juego de memoria.');
+            const tiempoFinal = this.cronometro.obtenerTiempoFormateado();
+            alert(`¡Felicidades! Has completado el juego de memoria en ${tiempoFinal}`);
         }
     }
 
@@ -124,6 +131,12 @@ class Memoria {
      * @param {HTMLElement} carta - Elemento article que representa la carta
      */
     voltearCarta(carta) {
+        // Iniciar el cronómetro en la primera jugada
+        if (!this.juegoIniciado) {
+            this.cronometro.iniciar();
+            this.juegoIniciado = true;
+        }
+        
         // Comprobaciones previas antes de voltear la carta
         
         // 1. Comprobar que la carta no está deshabilitada (revelada)
@@ -155,5 +168,27 @@ class Memoria {
             this.segunda_carta = carta;
             this.comprobarPareja();
         }
+    }
+
+    /**
+     * Método para reiniciar completamente el juego
+     */
+    reiniciarJuego() {
+        // Parar y reiniciar el cronómetro
+        this.cronometro.reset();
+        this.juegoIniciado = false;
+        
+        // Reiniciar atributos del juego
+        this.reiniciarAtributos();
+        this.parejasEncontradas = 0;
+        
+        // Quitar el estado de todas las cartas
+        const todasLasCartas = document.querySelectorAll('main article');
+        todasLasCartas.forEach(carta => {
+            carta.removeAttribute('data-estado');
+        });
+        
+        // Barajar las cartas de nuevo
+        this.barajarCartas();
     }
 }
