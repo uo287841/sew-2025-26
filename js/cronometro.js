@@ -16,7 +16,7 @@ class Cronometro {
     }
 
     /**
-     * Inicia el cronómetro
+     * Inicia el cronómetro (alias: arrancar)
      */
     iniciar() {
         if (!this.activo) {
@@ -31,6 +31,13 @@ class Cronometro {
                 this.mostrar();
             }, 100); // Actualizar cada décima de segundo (100ms)
         }
+    }
+
+    /**
+     * Alias para iniciar (compatibilidad con HTML)
+     */
+    arrancar() {
+        this.iniciar();
     }
 
     /**
@@ -53,6 +60,13 @@ class Cronometro {
         this.parar();
         this.tiempo = 0;
         this.mostrar();
+    }
+
+    /**
+     * Alias para reset (compatibilidad con HTML)
+     */
+    reiniciar() {
+        this.reset();
     }
 
     /**
@@ -139,6 +153,3 @@ class Cronometro {
         }
     }
 }
-
-// Crear instancia del cronómetro
-const cronometro = new Cronometro();
