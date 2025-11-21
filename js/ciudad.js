@@ -28,18 +28,39 @@ class Ciudad {
         return this.pais;
     }
 
-    getInformacionSecundaria() {
-        // Usamos <dl> (definition list) que es semántico y W3C válido
-        return "<dl>" +
-               "<dt>Gentilicio</dt><dd>" + this.gentilicio + "</dd>" +
-               "<dt>Población</dt><dd>" + this.poblacion + " habitantes</dd>" +
-               "</dl>";
+    /**
+     * Crea y retorna un elemento <dl> con información secundaria
+     * @returns {HTMLElement} Elemento dl con la información
+     */
+    crearInformacionSecundaria() {
+        const dl = document.createElement('dl');
+        
+        // Gentilicio
+        const dtGentilicio = document.createElement('dt');
+        dtGentilicio.textContent = 'Gentilicio';
+        const ddGentilicio = document.createElement('dd');
+        ddGentilicio.textContent = this.gentilicio;
+        
+        // Población
+        const dtPoblacion = document.createElement('dt');
+        dtPoblacion.textContent = 'Población';
+        const ddPoblacion = document.createElement('dd');
+        ddPoblacion.textContent = this.poblacion + ' habitantes';
+        
+        dl.appendChild(dtGentilicio);
+        dl.appendChild(ddGentilicio);
+        dl.appendChild(dtPoblacion);
+        dl.appendChild(ddPoblacion);
+        
+        return dl;
     }
 
+    /**
+     * Escribe las coordenadas en el documento
+     */
     writeCoordenadas() {
         const main = document.querySelector('main');
         if (main) {
-            // Usamos <dl> para las coordenadas también
             const dl = document.createElement('dl');
             
             const dt = document.createElement('dt');
@@ -54,17 +75,20 @@ class Ciudad {
         }
     }
 
+    /**
+     * Escribe toda la información completa de la ciudad en el documento
+     */
     escribirInfoCompleta() {
         const main = document.querySelector('main');
         
         if (main) {
-            // Información básica con dl (definition list)
+            // Título: Información Principal
+            const h3Principal = document.createElement('h3');
+            h3Principal.textContent = 'Información Principal';
+            main.appendChild(h3Principal);
+            
+            // Lista de definiciones para información básica
             const dlBasica = document.createElement('dl');
-
-            // Información Principal
-            const h3_principal = document.createElement('h3');
-            h3_principal.textContent = 'Información Principal';
-            main.appendChild(h3_principal);
             
             // Ciudad
             const dtCiudad = document.createElement('dt');
@@ -84,13 +108,15 @@ class Ciudad {
             
             main.appendChild(dlBasica);
             
-            // Información secundaria
-            const h3_secubdario = document.createElement('h3');
-            h3_secubdario.textContent = 'Información Adicional';
-            main.appendChild(h3_secubdario);
+            // Título: Información Adicional
+            const h3Secundario = document.createElement('h3');
+            h3Secundario.textContent = 'Información Adicional';
+            main.appendChild(h3Secundario);
             
+            // Sección con información secundaria
             const section = document.createElement('section');
-            section.innerHTML = this.getInformacionSecundaria();
+            const infoSecundaria = this.crearInformacionSecundaria();
+            section.appendChild(infoSecundaria);
             main.appendChild(section);
             
             // Coordenadas

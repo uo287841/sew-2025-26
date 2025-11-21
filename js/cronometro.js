@@ -16,7 +16,7 @@ class Cronometro {
     }
 
     /**
-     * Inicia el cronómetro (alias: arrancar)
+     * Inicia el cronómetro
      */
     iniciar() {
         if (!this.activo) {
@@ -145,6 +145,7 @@ class Cronometro {
 
     /**
      * Muestra el cronómetro en el documento HTML
+     * Utiliza manipulación del DOM en lugar de document.write()
      */
     mostrar() {
         const display = document.querySelector('main p');
