@@ -1,105 +1,130 @@
 "use strict";
 
-/**
- * Clase que representa información sobre una ciudad
- * @author UO287841 - Luis Salvador Ferrero Carneiro
- */
 class Ciudad {
+    #nombre;
+    #pais;
+    #gentilicio;
+    #poblacion;
+    #latitud;
+    #longitud;
+
     constructor(nombre, pais, gentilicio) {
-        this.nombre = nombre;
-        this.pais = pais;
-        this.gentilicio = gentilicio;
-        this.poblacion = null;
-        this.latitud = null;
-        this.longitud = null;
+        this.#nombre = nombre;
+        this.#pais = pais;
+        this.#gentilicio = gentilicio;
+        this.#poblacion = null;
+        this.#latitud = null;
+        this.#longitud = null;
     }
 
     rellenarAtributos() {
-        this.poblacion = 12000; 
-        this.latitud = 43.9789;
-        this.longitud = 12.6833;
+        this.#poblacion = 12000; 
+        this.#latitud = 43.9789;   // Misano Adriatico
+        this.#longitud = 12.6833;
     }
 
-    getNombre() {
-        return this.nombre;
-    }
+    // --- Método para procesar el JSON ---
+    procesarJSONCarrera(data) {
+        const main = document.querySelector("main");
+        if (!main) return;
 
-    getPais() {
-        return this.pais;
-    }
+        // --- Datos diarios ---
+        const h3Daily = document.createElement("h3");
+        h3Daily.textContent = "Datos diarios";
+        main.appendChild(h3Daily);
 
-    getInformacionSecundaria() {
-        // Usamos <dl> (definition list) que es semántico y W3C válido
-        return "<dl>" +
-               "<dt>Gentilicio</dt><dd>" + this.gentilicio + "</dd>" +
-               "<dt>Población</dt><dd>" + this.poblacion + " habitantes</dd>" +
-               "</dl>";
-    }
+        const dlDaily = document.createElement("dl");
 
-    writeCoordenadas() {
-        const main = document.querySelector('main');
-        if (main) {
-            // Usamos <dl> para las coordenadas también
-            const dl = document.createElement('dl');
-            
-            const dt = document.createElement('dt');
-            dt.textContent = 'Coordenadas';
-            
-            const dd = document.createElement('dd');
-            dd.textContent = 'Latitud ' + this.latitud + '°, Longitud ' + this.longitud + '°';
-            
-            dl.appendChild(dt);
-            dl.appendChild(dd);
-            main.appendChild(dl);
+        const dtSunrise = document.createElement("dt");
+        dtSunrise.textContent = "Salida del sol";
+        const ddSunrise = document.createElement("dd");
+        ddSunrise.textContent = data.daily.sunrise[0];
+
+        const dtSunset = document.createElement("dt");
+        dtSunset.textContent = "Puesta del sol";
+        const ddSunset = document.createElement("dd");
+        ddSunset.textContent = data.daily.sunset[0];
+
+        dlDaily.appendChild(dtSunrise);
+        dlDaily.appendChild(ddSunrise);
+        dlDaily.appendChild(dtSunset);
+        dlDaily.appendChild(ddSunset);
+        main.appendChild(dlDaily);
+
+        // --- Datos horarios ---
+        const h3Hourly = document.createElement("h3");
+        h3Hourly.textContent = "Datos horarios";
+        main.appendChild(h3Hourly);
+
+        const table = document.createElement("table");
+        const headerRow = document.createElement("tr");
+        ["Hora", "Temp (°C)", "Sensación (°C)", "Lluvia (mm)", "Humedad (%)", "Viento (km/h)", "Dirección (°)"]
+            .forEach(text => {
+                const th = document.createElement("th");
+                th.textContent = text;
+                headerRow.appendChild(th);
+            });
+        table.appendChild(headerRow);
+
+        for (let i = 0; i < data.hourly.time.length; i++) {
+            const row = document.createElement("tr");
+
+            const tdHora = document.createElement("td");
+            tdHora.textContent = data.hourly.time[i];
+            row.appendChild(tdHora);
+
+            const tdTemp = document.createElement("td");
+            tdTemp.textContent = data.hourly.temperature_2m[i];
+            row.appendChild(tdTemp);
+
+            const tdApp = document.createElement("td");
+            tdApp.textContent = data.hourly.apparent_temperature[i];
+            row.appendChild(tdApp);
+
+            const tdRain = document.createElement("td");
+            tdRain.textContent = data.hourly.precipitation[i];
+            row.appendChild(tdRain);
+
+            const tdHum = document.createElement("td");
+            tdHum.textContent = data.hourly.relative_humidity_2m[i];
+            row.appendChild(tdHum);
+
+            const tdWind = document.createElement("td");
+            tdWind.textContent = data.hourly.windspeed_10m[i];
+            row.appendChild(tdWind);
+
+            const tdDir = document.createElement("td");
+            tdDir.textContent = data.hourly.winddirection_10m[i];
+            row.appendChild(tdDir);
+
+            table.appendChild(row);
         }
+
+        main.appendChild(table);
     }
 
-    escribirInfoCompleta() {
-        const main = document.querySelector('main');
-        
-        if (main) {
-            // Información básica con dl (definition list)
-            const dlBasica = document.createElement('dl');
+    // --- Método para obtener datos de la carrera ---
+    getMeteorologiaCarrera(fechaCarrera) {
+        const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${this.#latitud}&longitude=${this.#longitud}&start_date=${fechaCarrera}&end_date=${fechaCarrera}&hourly=temperature_2m,apparent_temperature,precipitation,relative_humidity_2m,windspeed_10m,winddirection_10m&daily=sunrise,sunset&timezone=Europe/Rome`;
 
-            // Información Principal
-            const h3_principal = document.createElement('h3');
-            h3_principal.textContent = 'Información Principal';
-            main.appendChild(h3_principal);
-            
-            // Ciudad
-            const dtCiudad = document.createElement('dt');
-            dtCiudad.textContent = 'Ciudad';
-            const ddCiudad = document.createElement('dd');
-            ddCiudad.textContent = this.getNombre();
-            dlBasica.appendChild(dtCiudad);
-            dlBasica.appendChild(ddCiudad);
-            
-            // País
-            const dtPais = document.createElement('dt');
-            dtPais.textContent = 'País';
-            const ddPais = document.createElement('dd');
-            ddPais.textContent = this.getPais();
-            dlBasica.appendChild(dtPais);
-            dlBasica.appendChild(ddPais);
-            
-            main.appendChild(dlBasica);
-            
-            // Información secundaria
-            const h3_secubdario = document.createElement('h3');
-            h3_secubdario.textContent = 'Información Adicional';
-            main.appendChild(h3_secubdario);
-            
-            const section = document.createElement('section');
-            section.innerHTML = this.getInformacionSecundaria();
-            main.appendChild(section);
-            
-            // Coordenadas
-            this.writeCoordenadas();
-        }
+        $.ajax({
+            url: url,
+            dataType: "json",
+            success: (data) => {
+                console.log("Respuesta Open-Meteo:", data);
+                this.procesarJSONCarrera(data); // procesar JSON
+            },
+            error: (xhr, status, error) => {
+                console.error("Error en la llamada AJAX:", error);
+            }
+        });
     }
 }
 
-// Ejecución automática cuando el script se carga
-const ciudad = new Ciudad("Misano Adriatico", "Italia", "misanés/misanesa");
-ciudad.rellenarAtributos();
-ciudad.escribirInfoCompleta();
+// Inicialización
+document.addEventListener("DOMContentLoaded", function () {
+    const ciudad = new Ciudad("Misano Adriatico", "Italia", "misanés/misanesa");
+    ciudad.rellenarAtributos();
+    ciudad.escribirInfoCompleta();
+    ciudad.getMeteorologiaCarrera("2023-09-10");
+});

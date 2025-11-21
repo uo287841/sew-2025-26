@@ -155,4 +155,13 @@ footer {
     width: 100%;
     height: auto;
   }
+
+    /* Carrusel de imágenes en móviles */
+    article h2 + img {
+      width: 100%;      /* ocupa todo el ancho disponible */
+      height: auto;     /* mantiene la proporción original */
+      display: block;   /* asegura que se muestre como bloque */
+      margin: 0 auto;   /* centra la imagen horizontalmente */
+    }
+  
 }
