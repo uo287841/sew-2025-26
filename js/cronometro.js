@@ -5,149 +5,149 @@
  * @author UO287841 - Luis Salvador Ferrero Carneiro
  */
 class Cronometro {
+    // Atributos privados
+    #tiempo;
+    #intervalo;
+    #activo;
+
     /**
      * Constructor de la clase Cronometro
      * Inicializa el tiempo a cero
      */
     constructor() {
-        this.tiempo = 0; // Tiempo en décimas de segundo
-        this.intervalo = null; // Referencia al intervalo para poder detenerlo
-        this.activo = false; // Estado del cronómetro
+        this.#tiempo = 0;
+        this.#intervalo = null;
+        this.#activo = false;
     }
 
     /**
-     * Inicia el cronómetro
+     * Método público que inicia el cronómetro
      */
     iniciar() {
-        if (!this.activo) {
-            this.activo = true;
-            // Usar Temporal si está disponible, sino Date
-            const tiempoInicio = this.obtenerTiempoActual();
-            const tiempoBase = this.tiempo;
+        if (!this.#activo) {
+            this.#activo = true;
+            const tiempoInicio = this.#obtenerTiempoActual();
+            const tiempoBase = this.#tiempo;
             
-            this.intervalo = setInterval(() => {
-                const tiempoTranscurrido = this.calcularTiempoTranscurrido(tiempoInicio);
-                this.tiempo = tiempoBase + tiempoTranscurrido;
-                this.mostrar();
-            }, 100); // Actualizar cada décima de segundo (100ms)
+            this.#intervalo = setInterval(() => {
+                const tiempoTranscurrido = this.#calcularTiempoTranscurrido(tiempoInicio);
+                this.#tiempo = tiempoBase + tiempoTranscurrido;
+                this.#mostrar();
+            }, 100);
         }
     }
 
     /**
-     * Alias para iniciar (compatibilidad con HTML)
+     * Alias público para iniciar
      */
     arrancar() {
         this.iniciar();
     }
 
     /**
-     * Detiene el cronómetro
+     * Método público que detiene el cronómetro
      */
     parar() {
-        if (this.activo) {
-            this.activo = false;
-            if (this.intervalo) {
-                clearInterval(this.intervalo);
-                this.intervalo = null;
+        if (this.#activo) {
+            this.#activo = false;
+            if (this.#intervalo) {
+                clearInterval(this.#intervalo);
+                this.#intervalo = null;
             }
         }
     }
 
     /**
-     * Reinicia el cronómetro a cero
+     * Método público que reinicia el cronómetro a cero
      */
     reset() {
         this.parar();
-        this.tiempo = 0;
-        this.mostrar();
+        this.#tiempo = 0;
+        this.#mostrar();
     }
 
     /**
-     * Alias para reset (compatibilidad con HTML)
+     * Alias público para reset
      */
     reiniciar() {
         this.reset();
     }
 
     /**
-     * Obtiene el tiempo actual usando Temporal o Date
+     * Método privado que obtiene el tiempo actual
      * @returns {number} Tiempo actual en milisegundos
      */
-    obtenerTiempoActual() {
-        // Intentar usar Temporal (ECMAScript nuevo)
+    #obtenerTiempoActual() {
         if (typeof Temporal !== 'undefined' && Temporal.Now) {
             try {
                 return Temporal.Now.instant().epochMilliseconds;
             } catch (e) {
-                // Si Temporal falla, usar Date
                 return Date.now();
             }
         }
-        // Fallback a Date
         return Date.now();
     }
 
     /**
-     * Calcula el tiempo transcurrido desde un momento inicial
+     * Método privado que calcula el tiempo transcurrido
      * @param {number} tiempoInicio - Tiempo inicial en milisegundos
      * @returns {number} Tiempo transcurrido en décimas de segundo
      */
-    calcularTiempoTranscurrido(tiempoInicio) {
-        const tiempoActual = this.obtenerTiempoActual();
+    #calcularTiempoTranscurrido(tiempoInicio) {
+        const tiempoActual = this.#obtenerTiempoActual();
         const milisegundos = tiempoActual - tiempoInicio;
-        return Math.floor(milisegundos / 100); // Convertir a décimas
+        return Math.floor(milisegundos / 100);
     }
 
     /**
-     * Obtiene los minutos del tiempo actual
+     * Método privado que obtiene los minutos
      * @returns {number} Minutos
      */
-    obtenerMinutos() {
-        return Math.floor(this.tiempo / 600); // 600 décimas = 1 minuto
+    #obtenerMinutos() {
+        return Math.floor(this.#tiempo / 600);
     }
 
     /**
-     * Obtiene los segundos del tiempo actual
+     * Método privado que obtiene los segundos
      * @returns {number} Segundos (0-59)
      */
-    obtenerSegundos() {
-        return Math.floor((this.tiempo % 600) / 10); // 10 décimas = 1 segundo
+    #obtenerSegundos() {
+        return Math.floor((this.#tiempo % 600) / 10);
     }
 
     /**
-     * Obtiene las décimas del tiempo actual
+     * Método privado que obtiene las décimas
      * @returns {number} Décimas (0-9)
      */
-    obtenerDecimas() {
-        return this.tiempo % 10;
+    #obtenerDecimas() {
+        return this.#tiempo % 10;
     }
 
     /**
-     * Formatea un número con ceros a la izquierda
+     * Método privado que formatea un número con ceros a la izquierda
      * @param {number} numero - Número a formatear
      * @param {number} digitos - Cantidad de dígitos totales
      * @returns {string} Número formateado
      */
-    formatear(numero, digitos = 2) {
+    #formatear(numero, digitos = 2) {
         return numero.toString().padStart(digitos, '0');
     }
 
     /**
-     * Obtiene el tiempo formateado como string
+     * Método público que obtiene el tiempo formateado
      * @returns {string} Tiempo en formato MM:SS.D
      */
     obtenerTiempoFormateado() {
-        const minutos = this.formatear(this.obtenerMinutos());
-        const segundos = this.formatear(this.obtenerSegundos());
-        const decimas = this.obtenerDecimas();
+        const minutos = this.#formatear(this.#obtenerMinutos());
+        const segundos = this.#formatear(this.#obtenerSegundos());
+        const decimas = this.#obtenerDecimas();
         return `${minutos}:${segundos}.${decimas}`;
     }
 
     /**
-     * Muestra el cronómetro en el documento HTML
-     * Utiliza manipulación del DOM en lugar de document.write()
+     * Método privado que muestra el cronómetro en el documento
      */
-    mostrar() {
+    #mostrar() {
         const display = document.querySelector('main p');
         if (display) {
             display.textContent = this.obtenerTiempoFormateado();

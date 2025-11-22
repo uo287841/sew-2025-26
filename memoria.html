@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="estilo/layout-cards.css" />
   <title>MotoGP-Juego de Memoria</title>
 
-  <!-- Cargar primero el cronómetro, luego memoria -->
+  <!-- Enlazar cronometro.js ANTES de memoria.js -->
   <script src="js/cronometro.js"></script>
   <script src="js/memoria.js"></script>
 
@@ -45,83 +45,84 @@
   <main>
     <h2>Juego de memoria con cartas</h2>
 
-    <!-- Cronómetro -->
+    <!-- Elemento para mostrar el cronómetro -->
     <p>00:00.0</p>
 
     <!-- Carta 1: Honda -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="honda">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/honda.svg" alt="Logo-Honda" />
     </article>
 
     <!-- Carta 2: Honda -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="honda">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/honda.svg" alt="Logo-Honda" />
     </article>
 
     <!-- Carta 3: Yamaha -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="yamaha">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/yamaha.svg" alt="Logo-Yamaha" />
     </article>
 
     <!-- Carta 4: Yamaha -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="yamaha">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/yamaha.svg" alt="Logo-Yamaha" />
     </article>
 
     <!-- Carta 5: Ducati -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="ducati">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/ducati.svg" alt="Logo-Ducati" />
     </article>
 
     <!-- Carta 6: Ducati -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="ducati">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/ducati.svg" alt="Logo-Ducati" />
     </article>
 
     <!-- Carta 7: KTM -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="ktm">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/ktm.svg" alt="Logo-KTM" />
     </article>
 
     <!-- Carta 8: KTM -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="ktm">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/ktm.svg" alt="Logo-KTM" />
     </article>
 
     <!-- Carta 9: Aprilia -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="aprilia">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/aprilia.svg" alt="Logo-Aprilia" />
     </article>
 
     <!-- Carta 10: Aprilia -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="aprilia">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/aprilia.svg" alt="Logo-Aprilia" />
     </article>
 
     <!-- Carta 11: MotoGP -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="motogp">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/motogp.svg" alt="Logo-MotoGP" />
     </article>
 
     <!-- Carta 12: MotoGP -->
-    <article onclick="memoriaGame.voltearCarta(this)">
+    <article data-carta="motogp">
       <h3>Memory Card</h3>
       <img src="multimedia/img/logos/motogp.svg" alt="Logo-MotoGP" />
     </article>
   </main>
 
   <script>
+    // Crear instancia del juego
     var memoriaGame = new Memoria();
   </script>
 </body>
