@@ -4,13 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="author" content="UO287841 - Luis Salvador Ferrero Carneiro" />
-  <meta name="description" content="MotoGP-Meteorología" />
-  <meta name="keywords" content="moto, piloto, circuito" />
+  <meta name="description" content="MotoGP-Meteorología del circuito" />
+  <meta name="keywords" content="moto, meteorologia, clima, circuito" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MotoGP-Meteorología</title>
 
   <link rel="stylesheet" href="estilo/estilo.css" />
   <link rel="stylesheet" href="estilo/layout.css" />
-  <title>MotoGP-Meteorología</title>
+
+  <!-- Tarea 2: Enlazar jQuery Core 3.7.1 (versión minificada) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- Enlazar ciudad.js -->
+  <script src="js/ciudad.js"></script>
 
   <link rel="icon" type="image/x-icon" href="multimedia/img/favicon/favicon.ico" />
 </head>
@@ -31,17 +39,25 @@
 
     <p>
       Estás en: <a href="index.html">Inicio</a> &gt; &gt;
-      <strong>Metereología</strong>
+      <strong>Meteorología</strong>
     </p>
   </header>
 
-  <h2>Metereología MotoGP-Desktop</h2>
-
   <main>
+    <h2>Meteorología del circuito de Misano</h2>
+
+    <!-- Aquí se insertará la información meteorológica dinámicamente -->
   </main>
 
-  <script src="js/ciudad.js"></script>
-
+  <script>
+    // Crear instancia de Ciudad y obtener datos meteorológicos
+    $(document).ready(function () {
+      const ciudad = new Ciudad("Misano Adriatico", "Italia", "misanés/misanesa");
+      ciudad.rellenarAtributos();
+      ciudad.getMeteorologiaCarrera();     // Datos del día de la carrera
+      ciudad.getMeteorologiaEntrenos();    // Datos de los 3 días de entrenamientos
+    });
+  </script>
 </body>
 
 </html>
