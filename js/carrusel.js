@@ -5,17 +5,12 @@
  * @author UO287841 - Luis Salvador Ferrero Carneiro
  */
 class Carrusel {
-    // Atributos privados
     #busqueda;
     #actual;
     #maximo;
     #fotos;
     #imagenCarrusel;
 
-    /**
-     * Constructor de la clase Carrusel
-     * @param {string} busqueda - Término de búsqueda para Flickr
-     */
     constructor(busqueda) {
         this.#busqueda = busqueda;
         this.#actual = 0;
@@ -23,9 +18,6 @@ class Carrusel {
         this.#fotos = [];
     }
 
-    /**
-     * Método público que obtiene las fotografías de Flickr mediante AJAX
-     */
     getFotografias() {
         const apiKey = "f80e84d3342cfe02b373b4e3d39d9bdc";
         const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${this.#busqueda}&format=json&nojsoncallback=1&per_page=${this.#maximo}`;
@@ -47,14 +39,11 @@ class Carrusel {
         });
     }
 
-    /**
-     * Método privado que muestra las fotografías en el DOM
-     */
     #mostrarFotografias() {
         if (this.#fotos.length === 0) return;
         
         const $article = $("<article></article>");
-        const $h2 = $("<h4></h4>").text(`Imágenes del circuito de ${this.#busqueda}`);
+        const $h2 = $("<h2></h2>").text(`Imágenes del circuito de ${this.#busqueda}`);
         const $img = $("<img>")
             .attr("src", this.#fotos[this.#actual])
             .attr("alt", `Foto del circuito ${this.#busqueda}`);
@@ -68,9 +57,6 @@ class Carrusel {
         setInterval(this.#cambiarFotografia.bind(this), 3000);
     }
 
-    /**
-     * Método privado que cambia la fotografía mostrada
-     */
     #cambiarFotografia() {
         if (this.#fotos.length === 0) return;
         
@@ -78,9 +64,3 @@ class Carrusel {
         this.#imagenCarrusel.attr("src", this.#fotos[this.#actual]);
     }
 }
-
-// Inicializar el carrusel cuando el documento esté listo
-$(document).ready(function() {
-    const carrusel = new Carrusel("MotoGP,Misano");
-    carrusel.getFotografias();
-});

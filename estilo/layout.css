@@ -107,7 +107,7 @@ main section picture {
 }
 
 /* ============================================================
-   CARRUSEL DE IMÁGENES 
+   CARRUSEL DE IMÁGENES (Ejercicio 2)
    ============================================================ */
 
 /* Artículo del carrusel */
@@ -140,6 +140,84 @@ main article img {
 /* Efecto hover en la imagen del carrusel */
 main article img:hover {
   transform: scale(1.02);
+}
+
+
+/* ============================================================
+   NOTICIAS DE MOTOGP (Ejercicio 4)
+   ============================================================ */
+
+/* Sección de noticias */
+main section:last-of-type {
+  margin: 3em auto;  /* ← CORREGIDO: era "3em auto" sin coma */
+  padding-top: 2em;
+  border-top: 2px solid #d32f2f;
+  max-width: 800px;
+}
+
+/* Título de la sección de noticias */
+main section h3 {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #d32f2f;
+}
+
+/* Artículos de noticias */
+main section article {
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: #f9f9f9;
+  border-left: 4px solid #d32f2f;
+  border-radius: 4px;
+  max-width: 800px;  /* ← CORREGIDO: faltaba el punto y coma */
+}
+
+/* Título de cada noticia */
+main section article h4 {
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+/* Enlaces de las noticias */
+main section article h4 a {
+  color: #d32f2f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+main section article h4 a:hover {
+  color: #a02020;
+  text-decoration: underline;
+}
+
+/* Imágenes de las noticias */
+main section article img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 1em auto; 
+}
+
+/* Párrafos de descripción */
+main section article p {
+  line-height: 1.6;
+  margin: 1em 0;
+}
+
+/* Footer de cada noticia */
+main section article footer {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #666;
+}
+
+main section article footer p {
+  margin: 0.5em 0;
 }
 
 
@@ -192,18 +270,16 @@ footer {
     height: auto;
   }
 
- 
+  /* Carrusel en móviles */
   main article {
     margin: 1em 0;
     padding: 0 0.5em;
   }
   
-  
   main article h2 {
     font-size: 1.2em;
     margin-bottom: 0.5em;
   }
-  
   
   main article h2 + img,
   main article img {
@@ -211,5 +287,24 @@ footer {
     max-width: 100%;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Noticias en móviles */
+  main section:last-of-type {
+    margin-top: 2em;
+    padding-top: 1em;
+  }
+  
+  main section article {
+    margin: 1em 0;
+    padding: 1em;
+  }
+  
+  main section article h4 {
+    font-size: 1.1em;
+  }
+  
+  main section article img {
+    max-width: 100%;
   }
 }
