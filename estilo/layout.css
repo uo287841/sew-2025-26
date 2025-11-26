@@ -22,7 +22,6 @@
 
 /* Cuerpo general */
 body {
-  line-height: 1.6;
   margin: 0;
   max-width: none;
   padding: 0 1em;
@@ -47,7 +46,18 @@ section > h6 ~ * {
   margin-left: 2.5em; 
 }
 
+/* ============================================================
+   LISTAS DE DEFINICIÓN
+   ============================================================ */
 
+dd {
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+dt {
+  margin-top: 0.5em;
+}
 
 /* ============================================================
    HEADER — Maquetación
@@ -66,7 +76,7 @@ header {
 header > p {
   flex-basis: 100%;
   margin-top: 0.1em;
-  margin-bottom: 0.5em; /* MOVIDO desde estilo.css */
+  margin-bottom: 0.5em;
 }
 
 
@@ -120,9 +130,7 @@ main article {
 
 /* Encabezado del carrusel */
 main article h2 {
-  font-size: 1.5em;
   margin-bottom: 1em;
-  color: #d32f2f;
 }
 
 /* Imagen del carrusel */
@@ -130,65 +138,31 @@ main article img {
   width: 100%;
   max-width: 640px;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease;
   display: block;
   margin: 0 auto;
 }
 
-/* Efecto hover en la imagen del carrusel */
-main article img:hover {
-  transform: scale(1.02);
-}
-
 
 /* ============================================================
-   NOTICIAS DE MOTOGP (Ejercicio 4)
+   NOTICIAS DE MOTOGP 
    ============================================================ */
 
-/* Sección de noticias */
-main section:last-of-type {
-  margin: 3em auto;  /* ← CORREGIDO: era "3em auto" sin coma */
-  padding-top: 2em;
-  border-top: 2px solid #d32f2f;
-  max-width: 800px;
-}
-
 /* Título de la sección de noticias */
-main section h3 {
-  font-size: 1.8em;
+main section h4 {
   text-align: center;
   margin-bottom: 1.5em;
-  color: #d32f2f;
 }
 
 /* Artículos de noticias */
 main section article {
   margin: 2em auto;
   padding: 1.5em;
-  background-color: #f9f9f9;
-  border-left: 4px solid #d32f2f;
-  border-radius: 4px;
-  max-width: 800px;  /* ← CORREGIDO: faltaba el punto y coma */
+  max-width: 800px;  
 }
 
 /* Título de cada noticia */
-main section article h4 {
+main section article h5 {
   margin-top: 0;
-  font-size: 1.3em;
-}
-
-/* Enlaces de las noticias */
-main section article h4 a {
-  color: #d32f2f;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-main section article h4 a:hover {
-  color: #a02020;
-  text-decoration: underline;
 }
 
 /* Imágenes de las noticias */
@@ -196,14 +170,12 @@ main section article img {
   width: 100%;
   max-width: 600px;
   height: auto;
-  border-radius: 4px;
   display: block;
   margin: 1em auto; 
 }
 
 /* Párrafos de descripción */
 main section article p {
-  line-height: 1.6;
   margin: 1em 0;
 }
 
@@ -211,9 +183,6 @@ main section article p {
 main section article footer {
   margin-top: 1em;
   padding-top: 0.5em;
-  border-top: 1px solid #ccc;
-  font-size: 0.9em;
-  color: #666;
 }
 
 main section article footer p {
@@ -228,7 +197,6 @@ main section article footer p {
 footer {
   text-align: center;
   margin-top: 2em;
-  font-size: 0.875em;
   padding: 1em 0;
 }
 
@@ -277,7 +245,6 @@ footer {
   }
   
   main article h2 {
-    font-size: 1.2em;
     margin-bottom: 0.5em;
   }
   
@@ -285,23 +252,11 @@ footer {
   main article img {
     width: 100%;
     max-width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
-
-  /* Noticias en móviles */
-  main section:last-of-type {
-    margin-top: 2em;
-    padding-top: 1em;
-  }
-  
+   
   main section article {
     margin: 1em 0;
     padding: 1em;
-  }
-  
-  main section article h4 {
-    font-size: 1.1em;
   }
   
   main section article img {

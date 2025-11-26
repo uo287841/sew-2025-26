@@ -1,3 +1,11 @@
+/* ============================================================
+   Luis Salvador Ferrero Carneiro — UO287841
+   MotoGP-Desktop: Hoja de estilos visuales (estilo.css)
+   ============================================================ */
+
+/* ============================================================
+   ESTILOS GENERALES
+   ============================================================ */
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -6,6 +14,10 @@ body {
   background-color: #ffffff;
   color: #54627b; /* Serenity */
 }
+
+/* ============================================================
+   TIPOGRAFÍA Y COLORES
+   ============================================================ */
 
 /* Titulares: solo color y tipografía */
 h1 {
@@ -17,10 +29,13 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-weight: 600;
-  color: #710117; /* Serenity */
+  color: #710117;
 }
 
-/* Header: parte visual */
+/* ============================================================
+   HEADER — Estilos visuales
+   ============================================================ */
+
 header {
   background-color: #ecd5bb; /* Champagne */
 }
@@ -42,7 +57,10 @@ header a:focus {
   outline-offset: 4px;
 }
 
-/* Nav color */
+/* ============================================================
+   NAVEGACIÓN — Estilos visuales
+   ============================================================ */
+
 nav {
   color: #710117;
 }
@@ -54,13 +72,114 @@ nav {
   text-decoration: underline;
 }
 
+/* ============================================================
+   LISTAS DE DEFINICIÓN
+   ============================================================ */
+
 dt {
   font-weight: 700;
   color: #54627b;
-  margin-top: 0.5em;
 }
 
-dd {
-  margin-left: 1.5em;
-  margin-bottom: 0.5em;
+/* ============================================================
+   CARRUSEL DE IMÁGENES
+   ============================================================ */
+
+/* Encabezado del carrusel */
+main article h2 {
+  font-size: 1.5em;
+  color: #a02020;
+}
+
+/* Imagen del carrusel */
+main article img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+/* Efecto hover en la imagen del carrusel */
+main article img:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================================
+   NOTICIAS DE MOTOGP
+   ============================================================ */
+
+/* Título de la sección de noticias */
+main section h4 {
+  font-size: 1.8em;
+  color: #a02020;
+}
+
+/* Artículos de noticias */
+main section article {
+  background-color: #f9f9f9;
+  border-left: 4px solid #a02020;
+  border-radius: 4px;
+}
+
+/* Título de cada noticia */
+main section article h5 {
+  font-size: 1.3em;
+}
+
+/* Enlaces de las noticias */
+main section article h5 a {
+  color: #a02020;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+main section article h5 a:hover {
+  color: #a02020;
+  text-decoration: underline;
+}
+
+/* Imágenes de las noticias */
+main section article img {
+  border-radius: 4px;
+}
+
+/* Párrafos de descripción */
+main section article p {
+  line-height: 1.6;
+}
+
+/* Footer de cada noticia */
+main section article footer {
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* ============================================================
+   FOOTER — Estilos visuales
+   ============================================================ */
+
+footer {
+  font-size: 0.875em;
+}
+
+/* ============================================================
+   MEDIA QUERIES — Estilos responsivos
+   ============================================================ */
+
+/* Dispositivos pequeños (móviles) */
+@media (min-width: 320px) and (max-width: 799px) {
+  
+  /* Carrusel en móviles */
+  main article h2 {
+    font-size: 1.2em;
+  }
+  
+  main article img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  main section article h4 {
+    font-size: 1.1em;
+  }
 }

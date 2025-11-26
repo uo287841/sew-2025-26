@@ -86,13 +86,13 @@ class Noticias {
         if ($main.length === 0) return;
 
         const $section = $("<section></section>");
-        const $h3 = $("<h3></h3>").text("Últimas noticias de MotoGP");
+        const $h3 = $("<h4></h4>").text("Últimas noticias de MotoGP");
         $section.append($h3);
 
         this.#noticias.forEach(noticia => {
             const $article = $("<article></article>");
             
-            const $h4 = $("<h4></h4>");
+            const $h4 = $("<h5></h5>");
             const $enlace = $("<a></a>")
                 .attr("href", noticia.url)
                 .attr("target", "_blank")
